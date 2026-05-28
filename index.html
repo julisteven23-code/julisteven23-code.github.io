@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Erwin Schrödinger | Vida, ciencia y legado pedagógico - UPN</title>
+  <meta name="description" content="Página educativa ampliada sobre la vida, obra y legado de Erwin Schrödinger para un contexto universitario UPN." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root{--upn-blue:#143B63;
+    --upn-blue-2:#0B2744;
+    --upn-sky:#EAF3FF;
+    --upn-gold:#F5A623;
+    --upn-gold-2:#FFD27A;
+    --ink:#172338;
+    --muted:#62728A;
+    --paper:#FFFFFF;
+    --soft:#F5F8FC;
+    --line:#DDE7F2;
+    --green:#2E7D6B;
+    --violet:#5A4BA8;
+    --danger:#B94E48;
+    --radius:28px;
+    --shadow:0 24px 70px rgba(14, 39, 68, .12);
+    --shadow-soft:0 12px 35px rgba(14, 39, 68, .08);}
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(245,166,35,.12), transparent 32rem),
+        radial-gradient(circle at 85% 8%, rgba(20,59,99,.16), transparent 28rem),
+        linear-gradient(180deg, #F8FBFF 0%, #EEF4FB 100%);
+      color:var(--ink);
+      line-height:1.72;
+      overflow-x:hidden;}
+    a{color:inherit}
+    img{max-width:100%;display:block}
+    .skip-link{position:absolute;left:-999px;top:10px;background:var(--upn-gold);color:#111;padding:10px 14px;border-radius:12px;z-index:10000;font-weight:800}
+    .skip-link:focus{left:12px}
+
+    .progress{position:fixed;top:0;left:0;height:4px;width:0%;background:linear-gradient(90deg,var(--upn-gold),#FFF2C6);z-index:9999;
+      box-shadow:0 0 16px rgba(245,166,35,.55);}
+
+    header{position:relative;
+      min-height:88vh;
+      display:grid;
+      place-items:center;
+      padding:90px 22px 70px;
+      color:white;
+      background:
+        linear-gradient(135deg, rgba(11,39,68,.96), rgba(20,59,99,.93)),
+        url('https://upload.wikimedia.org/wikipedia/commons/2/21/Erwin_Schr%C3%B6dinger_%281933%29.jpg') center/cover no-repeat;
+      overflow:hidden;
+      border-bottom:7px solid var(--upn-gold);}
+    header::before{content:"";
+      position:absolute;inset:0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+      background-size:46px 46px;
+      mask-image:linear-gradient(180deg,rgba(0,0,0,.95),rgba(0,0,0,.25));}
+    header::after{content:"ψ";
+      position:absolute;
+      right:-30px;bottom:-120px;
+      font-family:'Playfair Display',serif;
+      font-size:390px;
+      line-height:1;
+      opacity:.08;
+      transform:rotate(-12deg);}
+        .hero{position:relative;z-index:2;max-width:1180px;width:100%;display:grid;grid-template-columns:1.08fr .92fr;gap:42px;align-items:center}
+        .hero-text{max-width:780px}
+        .eyebrow{display:inline-flex;gap:10px;align-items:center;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(10px);padding:9px 15px;border-radius:999px;font-size:.8rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:22px;color:#FFF4D8}
+        .eyebrow span{width:9px;height:9px;background:var(--upn-gold);border-radius:50%;box-shadow:0 0 0 5px rgba(245,166,35,.15)}
+        h1{font-family:'Playfair Display', Georgia, serif;font-size:clamp(3.15rem,8vw,6.9rem);line-height:.95;letter-spacing:-.055em;margin-bottom:22px;text-wrap:balance}
+        .subtitle{font-size:clamp(1.05rem,2vw,1.35rem);color:rgba(255,255,255,.88);max-width:700px;margin-bottom:28px}
+        .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+        .btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;border-radius:999px;padding:13px 18px;font-weight:800;transition:.2s ease;border:1px solid rgba(255,255,255,.2)}
+        .btn.secondary{background:rgba(255,255,255,.10);color:white;backdrop-filter:blur(10px)}
+        .btn:hover{transform:translateY(-3px)}
+        .hero-card{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:34px;padding:26px;backdrop-filter:blur(18px);box-shadow:0 30px 80px rgba(0,0,0,.22)}
+        .portrait{border-radius:28px;overflow:hidden;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08)}
+        .portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:saturate(.85) contrast(1.04)}
+        .quick-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:16px}
+        .quick-item{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:14px}
+        .quick-item small{display:block;color:#FFDFA0;font-size:.72rem;text-transform:uppercase;font-weight:800;letter-spacing:.08em;margin-bottom:4px}
+        .quick-item strong{font-size:1rem;color:white}
+
+    nav{position:sticky;top:0;z-index:1000;
+        background:rgba(255,255,255,.88);backdrop-filter:blur(18px);
+        border-bottom:1px solid rgba(20,59,99,.12);
+        box-shadow:0 10px 30px rgba(20,59,99,.05);}
+    .nav-inner{max-width:1240px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 22px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:900;color:var(--upn-blue);white-space:nowrap}
+    .brand-mark{width:34px;height:34px;border-radius:11px;background:linear-gradient(135deg,var(--upn-blue),var(--upn-blue-2));display:grid;place-items:center;color:var(--upn-gold);box-shadow:0 7px 18px rgba(20,59,99,.23)}
+    .nav-links{display:flex;gap:6px;align-items:center;overflow:auto;padding-bottom:2px;scrollbar-width:none}
+    .nav-links::-webkit-scrollbar{display:none}
+    .nav-links a{text-decoration:none;color:var(--upn-blue);font-weight:750;font-size:.9rem;padding:9px 12px;border-radius:999px;white-space:nowrap;transition:.2s}
+    .nav-links a:hover,.nav-links a.active{background:var(--upn-sky);color:var(--upn-blue-2)}
+
+    main{max-width:1240px;margin:0 auto;padding:42px 22px 70px}
+    section{scroll-margin-top:92px}
+    .section-card{background:rgba(255,255,255,.88);border:1px solid rgba(20,59,99,.09);border-radius:var(--radius);box-shadow:var(--shadow-soft);padding:38px;margin:34px 0;position:relative;overflow:hidden}
+    .section-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:7px;background:linear-gradient(90deg,var(--upn-blue),var(--upn-gold),transparent)}
+    .section-kicker{display:inline-flex;align-items:center;gap:8px;color:var(--upn-blue);background:var(--upn-sky);border:1px solid rgba(20,59,99,.08);border-radius:999px;padding:7px 12px;font-size:.78rem;font-weight:900;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
+    h2{font-family:'Playfair Display', Georgia, serif;font-size:clamp(2rem,4.5vw,3.05rem);line-height:1.05;color:var(--upn-blue-2);letter-spacing:-.035em;margin-bottom:18px;text-wrap:balance}
+    h3{font-size:1.36rem;color:var(--upn-blue);line-height:1.2;margin:26px 0 10px;letter-spacing:-.02em}
+    p{margin:0 0 16px;color:#26364E}
+    .lead{font-size:1.1rem;color:#30415C;max-width:930px}
+    .grid-2{display:grid;grid-template-columns:1.08fr .92fr;gap:34px;align-items:start}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .info-card{background:linear-gradient(180deg,#FFFFFF,#F8FBFF);border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:0 10px 26px rgba(20,59,99,.06);transition:.2s ease}
+    .info-card:hover{transform:translateY(-5px);box-shadow:0 22px 40px rgba(20,59,99,.11)}
+    .info-card i{font-size:1.35rem;color:var(--upn-gold);margin-bottom:12px}
+    .info-card h3{font-size:1.05rem;margin:0 0 8px;color:var(--upn-blue-2)}
+    .info-card p{font-size:.94rem;color:#40526B;margin:0}
+    .pill-list{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0 0}
+    .pill{padding:8px 12px;border-radius:999px;background:#EDF5FF;border:1px solid #DCEBFA;color:var(--upn-blue);font-weight:750;font-size:.86rem}
+
+    .reader-map{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:24px}
+    .map-step{position:relative;background:linear-gradient(180deg,#fff,#F8FBFF);border:1px solid var(--line);border-radius:22px;padding:18px;min-height:150px}
+    .map-step .num{width:34px;height:34px;border-radius:12px;background:var(--upn-blue);color:#fff;display:grid;place-items:center;font-weight:900;margin-bottom:12px}
+    .map-step h3{font-size:1rem;margin:0 0 7px;color:var(--upn-blue-2)}
+    .map-step p{font-size:.88rem;margin:0;color:#51627A}
+
+    .timeline{position:relative;margin-top:28px;padding-left:20px}
+    .timeline::before{content:"";position:absolute;left:10px;top:10px;bottom:10px;width:3px;background:linear-gradient(var(--upn-gold),var(--upn-blue));border-radius:999px}
+    .time-item{position:relative;background:#fff;border:1px solid var(--line);border-radius:24px;padding:22px 24px;margin:0 0 18px 18px;box-shadow:0 8px 22px rgba(20,59,99,.06)}
+    .time-item::before{content:"";position:absolute;left:-35px;top:28px;width:16px;height:16px;border-radius:50%;background:var(--upn-gold);border:4px solid #fff;box-shadow:0 0 0 3px rgba(245,166,35,.25)}
+    .time-item .year{display:inline-block;color:#fff;background:var(--upn-blue);border-radius:999px;padding:5px 10px;font-weight:900;font-size:.82rem;margin-bottom:10px}
+    .time-item h3{margin:0 0 8px;color:var(--upn-blue-2);font-size:1.18rem}
+    .time-item p{margin-bottom:0;color:#40526B}
+
+    .callout{background:linear-gradient(135deg,#0B2744,#143B63);color:#fff;border-radius:28px;padding:28px;position:relative;overflow:hidden;box-shadow:var(--shadow);margin:24px 0}
+    .callout::after{content:"∂ψ/∂t";position:absolute;right:22px;bottom:-8px;font-family:'Playfair Display',serif;font-size:84px;opacity:.09}
+    .callout p,.callout strong{color:#fff}
+    .callout .small{color:#FFE2A8;font-weight:900;text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;margin-bottom:8px}
+    .mini-note{background:#FFF8E8;border:1px solid #FFE1A6;border-left:6px solid var(--upn-gold);border-radius:20px;padding:18px 20px;margin:20px 0;color:#47351B}
+    .mini-note strong{color:#5A3C05}
+
+    .equation-box{background:#081E35;color:white;border-radius:26px;padding:28px;border:1px solid rgba(255,255,255,.1);box-shadow:var(--shadow);position:sticky;top:92px}
+    .equation{font-family:'Times New Roman', serif;font-size:clamp(1.5rem,3vw,2.7rem);text-align:center;padding:26px 8px;color:#FDE7B0}
+    .equation-caption{font-size:.92rem;color:rgba(255,255,255,.78);text-align:center;margin:0}
+    .equation-box hr{border:none;border-top:1px solid rgba(255,255,255,.14);margin:22px 0}
+    .legend-item{display:flex;gap:12px;align-items:flex-start;margin-bottom:13px;font-size:.93rem;color:rgba(255,255,255,.84)}
+    .legend-item b{color:#fff}
+    .dot{width:12px;height:12px;border-radius:50%;background:var(--upn-gold);flex:0 0 auto;margin-top:7px}
+
+    .concept-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:20px}
+    .concept{background:#fff;border:1px solid var(--line);border-radius:22px;padding:20px;display:flex;gap:14px;align-items:flex-start}
+    .concept .icon{width:44px;height:44px;border-radius:16px;display:grid;place-items:center;background:var(--upn-sky);color:var(--upn-blue);flex:0 0 auto;font-size:1.1rem}
+    .concept h3{font-size:1.03rem;margin:0 0 6px;color:var(--upn-blue-2)}
+    .concept p{font-size:.92rem;margin:0;color:#51627A}
+
+    .cat-lab{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0}
+    .cat-step{background:#fff;border:1px solid var(--line);border-radius:23px;padding:18px;text-align:center;position:relative;box-shadow:0 10px 22px rgba(20,59,99,.05)}
+    .cat-step:not(:last-child)::after{content:"→";position:absolute;right:-14px;top:45%;transform:translateY(-50%);font-weight:900;color:var(--upn-blue);background:#F5F8FC;border-radius:999px;width:28px;height:28px;display:grid;place-items:center;border:1px solid var(--line)}
+    .cat-step i{font-size:1.55rem;color:var(--upn-gold);margin-bottom:8px}
+    .cat-step h3{font-size:.96rem;margin:0 0 6px;color:var(--upn-blue-2)}
+    .cat-step p{font-size:.86rem;margin:0;color:#53657A}
+
+    details{background:#fff;border:1px solid var(--line);border-radius:20px;padding:0;margin-bottom:12px;overflow:hidden;box-shadow:0 7px 20px rgba(20,59,99,.04)}
+    summary{cursor:pointer;list-style:none;padding:18px 20px;font-weight:850;color:var(--upn-blue-2);display:flex;gap:12px;align-items:center;justify-content:space-between}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:"+";font-size:1.4rem;color:var(--upn-gold);font-weight:900}
+    details[open] summary::after{content:"–"}
+    details div{padding:0 20px 20px;color:#40526B}
+
+    .source-list{display:grid;gap:12px;margin-top:18px}
+    .source-list a{display:block;text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:18px;padding:15px 17px;color:var(--upn-blue);font-weight:750;transition:.2s}
+    .source-list a:hover{transform:translateX(4px);border-color:#BAD4EC;background:#F9FCFF}
+
+    figure{border-radius:28px;overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:0 12px 32px rgba(20,59,99,.08)}
+    figure img{width:100%;height:auto;object-fit:cover}
+    figcaption{background:#fff;color:#607087;font-size:.86rem;text-align:center;padding:13px 16px;border-top:1px solid var(--line)}
+
+    .compare-table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:22px;border:1px solid var(--line);background:#fff;box-shadow:0 10px 26px rgba(20,59,99,.05);margin-top:18px}
+    .compare-table th,.compare-table td{padding:15px 16px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+    .compare-table th{background:#EEF6FF;color:var(--upn-blue-2);font-size:.9rem;text-transform:uppercase;letter-spacing:.04em}
+    .compare-table tr:last-child td{border-bottom:none}
+    .compare-table td{color:#40526B}
+
+    .footer-cta{background:linear-gradient(135deg,#F9FBFF,#FFFFFF);border:1px solid var(--line);border-radius:30px;padding:32px;margin:34px 0;text-align:center;box-shadow:var(--shadow-soft)}
+    .footer-cta h2{margin-bottom:10px}
+    footer{background:#081E35;color:#D7E8FA;text-align:center;padding:34px 22px;border-top:6px solid var(--upn-gold)}
+    footer p{color:#D7E8FA;margin-bottom:8px;font-size:.92rem}
+    .btn-top{position:fixed;right:24px;bottom:24px;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--upn-gold);color:#102039;text-decoration:none;box-shadow:0 15px 30px rgba(0,0,0,.18);z-index:900;font-weight:900}
+
+    @media (max-width:1050px){.hero,.grid-2{grid-template-columns:1fr}
+          header{min-height:auto;padding-top:76px}
+          .hero-card{max-width:620px}
+          .reader-map{grid-template-columns:repeat(2,1fr)}
+          .grid-4{grid-template-columns:repeat(2,1fr)}
+          .grid-3{grid-template-columns:1fr 1fr}
+          .cat-lab{grid-template-columns:repeat(2,1fr)}
+          .cat-step:nth-child(2)::after{display:none}
+          .equation-box{position:relative;top:auto}}
+    @media (max-width:720px){.nav-inner{align-items:flex-start;flex-direction:column}
+          .nav-links{width:100%}
+          .section-card{padding:24px 18px;border-radius:24px}
+          .grid-3,.grid-4,.concept-grid,.reader-map,.cat-lab{grid-template-columns:1fr}
+          .cat-step::after{display:none!important}
+          .quick-grid{grid-template-columns:1fr}
+          .hero-card{padding:18px;border-radius:24px}
+          h1{font-size:3.2rem}
+          .btn-top{right:16px;bottom:16px}
+          .compare-table{font-size:.88rem}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="progress" id="progress"></div>
+
+  <header id="inicio">
+    <div class="hero">
+      <div class="hero-text">
+        <div class="eyebrow"><span></span> Universidad Pedagógica Nacional · Facultad de Ciencia y Tecnología</div>
+        <h1>Erwin Schrödinger: vida, ciencia y pensamiento</h1>
+        <p class="subtitle">Una experiencia de lectura clara, amplia y pedagógica sobre el físico que cambió la forma de entender la materia, la realidad y la relación entre ciencia, filosofía y educación.</p>
+        <div class="pill-list" aria-label="Temas principales">
+          <span class="pill">Mecánica cuántica</span>
+          <span class="pill">Ecuación de onda</span>
+          <span class="pill">Gato de Schrödinger</span>
+          <span class="pill">Ciencia y filosofía</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn primary" href="#ruta"><i class="fa-solid fa-compass"></i> Empezar recorrido</a>
+          <a class="btn secondary" href="#fuentes"><i class="fa-solid fa-book-open"></i> Ver fuentes</a>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="Ficha rápida de Erwin Schrödinger">
+        <figure class="portrait">
+          <img src="scho.png" alt="Retrato de Erwin Schrödinger en 1933" loading="eager">
+          <figcaption>Erwin Schrödinger, uno de los fundadores de la mecánica cuántica moderna.</figcaption>
+        </figure>
+        <div class="quick-grid">
+          <div class="quick-item"><small>Nació</small><strong>12 de agosto de 1887 · Viena</strong></div>
+          <div class="quick-item"><small>Murió</small><strong>4 de enero de 1961 · Viena</strong></div>
+          <div class="quick-item"><small>Reconocimiento</small><strong>Nobel de Física 1933</strong></div>
+          <div class="quick-item"><small>Idea central</small><strong>La materia puede describirse como onda</strong></div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <nav aria-label="Navegación principal">
+    <div class="nav-inner">
+      <a class="brand" href="#inicio" aria-label="Volver al inicio"><span class="brand-mark">ψ</span> Schrödinger · UPN</a>
+      <div class="nav-links" id="navLinks">
+        <a href="#ruta">Ruta</a>
+        <a href="#perfil">Perfil</a>
+        <a href="#vida">Vida</a>
+        <a href="#linea">Línea de tiempo</a>
+        <a href="#aportes">Aportes</a>
+        <a href="#gato">Gato</a>
+        <a href="#pedagogia">UPN</a>
+        <a href="#fuentes">Fuentes</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="contenido">
+    <section id="ruta" class="section-card">
+      <span class="section-kicker"><i class="fa-solid fa-route"></i> Ruta intuitiva</span>
+      <h2>Explorando la vida de Erwin Schrödinger</h2>
+      <p class="lead"> vida y curiosidades de la vida de Erwin Schrödinger.</p>
+      <div class="reader-map">
+        <div class="map-step"><div class="num">1</div><h3>Ubicar</h3><p>Quién fue, cuándo vivió y por qué es importante.</p></div>
+        <div class="map-step"><div class="num">2</div><h3>Comprender</h3><p>Su formación, su época y los problemas que intentaba resolver.</p></div>
+        <div class="map-step"><div class="num">3</div><h3>Conectar</h3><p>Relacionar la ecuación, la onda y el átomo con ejemplos cotidianos.</p></div>
+        <div class="map-step"><div class="num">4</div><h3>Debatir</h3><p>Analizar el gato de Schrödinger y el problema de la medición.</p></div>
+        <div class="map-step"><div class="num">5</div><h3>Aplicar</h3><p>Convertir su legado en preguntas para clase, investigación y formación docente.</p></div>
+      </div>
+    </section>
+
+    <section id="perfil" class="section-card">
+      <span class="section-kicker"><i class="fa-solid fa-user-graduate"></i> Perfil esencial</span>
+      <h2>¿Quién fue Erwin Schrödinger?</h2>
+      <div class="grid-2">
+        <div>
+          <p class="lead"><strong>Erwin Schrödinger</strong> fue un físico teórico austríaco, posteriormente vinculado también con Irlanda, reconocido por construir una de las formulaciones más influyentes de la mecánica cuántica: la <strong>mecánica ondulatoria</strong>. Su nombre quedó unido a una ecuación que permitió describir el comportamiento de partículas microscópicas no como objetos con trayectorias fijas, sino como sistemas representados por funciones de onda.</p>
+          <p>Su importancia no está únicamente en haber propuesto una fórmula famosa. Schrödinger ayudó a cambiar la pregunta central de la física: ya no se trataba solo de saber <em>dónde está</em> una partícula, sino de comprender <em>qué puede saberse</em> de ella, con qué probabilidad y bajo qué condiciones de observación.</p>
+          <p>Además, fue un pensador profundamente interdisciplinar: le interesaban la biología, la filosofía, la literatura, la historia de la ciencia, la percepción del color y las grandes preguntas sobre la conciencia. Por eso su vida es especialmente valiosa para un contexto pedagógico: muestra que la ciencia no avanza aislada, sino en diálogo con la cultura, la ética y la educación.</p>
+          <div class="mini-note"><strong>curiosidades: </strong>Un dato curioso sobre Erwin Schrödinger es que aunque es famoso por el experimento mental del “gato de Schrödinger”, ¡él lo creó para criticar algunas interpretaciones de la mecánica cuántica, no para defenderlas!</div>
+        </div>
+        <div class="grid-2" style="gap:16px">
+          <div class="info-card"><i class="fa-solid fa-location-dot"></i><h3>Origen</h3><p>Nació en Viena, en una familia culta y con intereses científicos, artísticos y humanísticos.</p></div>
+          <div class="info-card"><i class="fa-solid fa-flask"></i><h3>Formación</h3><p>Estudió física en la Universidad de Viena entre 1906 y 1910.</p></div>
+          <div class="info-card"><i class="fa-solid fa-wave-square"></i><h3>Gran aporte</h3><p>Formuló en 1926 la ecuación de onda que lleva su nombre.</p></div>
+          <div class="info-card"><i class="fa-solid fa-award"></i><h3>Nobel</h3><p>Compartió el Premio Nobel de Física de 1933 con Paul A. M. Dirac.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="vida" class="section-card">
+      <span class="section-kicker"><i class="fa-solid fa-book"></i> Biografía</span>
+      <h2>Una vida marcada por la ciencia, el exilio y la curiosidad intelectual</h2>
+      <div class="grid-2">
+        <article>
+          <h3>Infancia y ambiente familiar</h3>
+          <p>Schrödinger nació el <strong>12 de agosto de 1887</strong> en Viena, cuando la ciudad formaba parte del Imperio austrohúngaro. Fue hijo único de Rudolf Schrödinger, un hombre de amplia cultura, interesado en la química, la botánica y el arte. Desde pequeño creció en un ambiente donde el conocimiento no se limitaba a una sola disciplina: ciencia, pintura, lenguas, literatura y filosofía podían convivir en la misma conversación.</p>
+          <p>Ese ambiente explica una característica que lo acompañó toda la vida: su rechazo a aprender datos de memoria sin comprensión. Le atraía la lógica, la belleza del lenguaje y la estructura profunda de los problemas. Esa sensibilidad sería clave para formular una teoría física con gran fuerza matemática, pero también con enorme capacidad imaginativa.</p>
+
+          <h3>Formación universitaria en Viena</h3>
+          <p>Entre <strong>1906 y 1910</strong> estudió física en la Universidad de Viena. Allí recibió la influencia de Friedrich Hasenöhrl, sucesor de Ludwig Boltzmann, una figura decisiva para la física estadística. Ese contacto lo acercó a los problemas de probabilidad, energía, calor y estructura matemática de los fenómenos físicos.</p>
+          <p>En 1910 obtuvo su doctorado y luego trabajó como asistente de Franz Exner. Aunque su obra más conocida sería teórica, también tuvo formación en experimentación y en problemas prácticos de física. Esta combinación le permitió comprender tanto la precisión matemática como la importancia de la observación.</p>
+
+          <h3>Primera Guerra Mundial y primeros años académicos</h3>
+          <p>Durante la Primera Guerra Mundial sirvió como oficial de artillería. Como muchos científicos europeos de su generación, su desarrollo intelectual quedó atravesado por la guerra, la inestabilidad política y la reorganización de las universidades después del conflicto.</p>
+          <p>En 1920 inició una etapa de movilidad académica: trabajó en Jena, Stuttgart y Breslau. En 1921 llegó a la Universidad de Zúrich, donde viviría uno de los periodos más productivos de su vida. Zúrich fue el lugar en el que su pensamiento alcanzó madurez científica y donde formuló la mecánica ondulatoria.</p>
+        </article>
+        <aside>
+          <figure>
+            <img src="scho.png" alt="Esquema del experimento mental del gato de Schrödinger" loading="lazy">
+            <figcaption>El gato de Schrödinger es famoso, pero funciona mejor cuando se entiende dentro de su crítica a las interpretaciones de la mecánica cuántica.</figcaption>
+          </figure>
+          <div class="callout">
+            <p class="small">Clave humana</p>
+            <p><strong>Schrödinger fue un científico de frontera:</strong> se movió entre física, biología, filosofía y literatura. Su vida muestra que una mente científica también puede ser una mente humanista.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="linea" class="section-card">
+      <span class="section-kicker"><i class="fa-solid fa-clock"></i> Línea de tiempo</span>
+      <h2>Etapas principales de su trayectoria</h2>
+      <p class="lead">Esta línea de tiempo permite ver cómo su vida se conectó con algunos de los hechos más decisivos del siglo XX: guerras mundiales, auge de la física cuántica, nazismo, exilio académico y reconstrucción de la ciencia europea.</p>
+      <div class="timeline">
+        <div class="time-item"><span class="year">1887</span><h3>Nacimiento en Viena</h3><p>Nace en una ciudad culturalmente intensa, donde convergen ciencia, música, filosofía y debate intelectual. Ese ambiente favorece una formación amplia, no reducida a una sola disciplina.</p></div>
+        <div class="time-item"><span class="year">1906–1910</span><h3>Estudios en la Universidad de Viena</h3><p>Se forma en física y adquiere una base matemática sólida. El contacto con la tradición de Boltzmann le deja una sensibilidad especial hacia la probabilidad y los sistemas complejos.</p></div>
+        <div class="time-item"><span class="year">1914–1918</span><h3>La guerra interrumpe la vida académica</h3><p>La Primera Guerra Mundial altera la vida de Europa y también la de Schrödinger. Su generación científica tuvo que producir conocimiento en medio de crisis políticas y sociales profundas.</p></div>
+        <div class="time-item"><span class="year">1921–1926</span><h3>Zúrich: el periodo decisivo</h3><p>En Zúrich encuentra un ambiente académico fértil. En 1926 publica sus trabajos sobre mecánica ondulatoria y formula la ecuación que lo convertiría en una figura central de la física moderna.</p></div>
+        <div class="time-item"><span class="year">1927</span><h3>Berlín y la sucesión de Max Planck</h3><p>Acepta una cátedra en la Universidad de Berlín como sucesor de Max Planck. Entra en contacto con uno de los centros más importantes de la física mundial, donde también estaban figuras como Einstein.</p></div>
+        <div class="time-item"><span class="year">1933</span><h3>Nobel y salida de Alemania</h3><p>Recibe el Premio Nobel de Física, compartido con Paul Dirac. Ese mismo periodo está marcado por su salida de Alemania ante el avance del nazismo y la persecución política e intelectual.</p></div>
+        <div class="time-item"><span class="year">1935</span><h3>El gato y el debate sobre la realidad cuántica</h3><p>Propone su célebre experimento mental del gato, no como una broma, sino como una crítica profunda a la forma en que se interpretaba la superposición en la mecánica cuántica.</p></div>
+        <div class="time-item"><span class="year">1939–1956</span><h3>Dublín: ciencia, filosofía y biología</h3><p>Se establece en Irlanda y trabaja en el Dublin Institute for Advanced Studies. Durante esta etapa escribe <em>¿Qué es la vida?</em>, obra que conectó física y biología e influyó en generaciones posteriores.</p></div>
+        <div class="time-item"><span class="year">1956–1961</span><h3>Regreso a Viena y últimos años</h3><p>Vuelve a su ciudad natal como profesor emérito. Muere el 4 de enero de 1961, dejando un legado que sigue presente en física, química, biología molecular, tecnología cuántica y filosofía de la ciencia.</p></div>
+      </div>
+    </section>
+
+    <section id="aportes" class="section-card">
+      <span class="section-kicker"><i class="fa-solid fa-atom"></i> Ciencia explicada</span>
+      <h2>Sus aportes científicos más importantes</h2>
+      <div class="grid-2">
+        <div>
+          <h3>1. La ecuación de Schrödinger</h3>
+          <p>La ecuación de Schrödinger es una de las bases de la mecánica cuántica. Su función es describir cómo evoluciona en el tiempo la <strong>función de onda</strong> de un sistema. En lugar de imaginar al electrón como una bolita que gira en una órbita exacta, la teoría permite calcular una distribución de probabilidades: dónde es más probable encontrarlo y cómo cambia ese estado.</p>
+          <p>Esta idea fue revolucionaria porque rompía con la intuición clásica. En la física de Newton, si se conoce la posición y velocidad de un objeto, se puede predecir su trayectoria. En el mundo cuántico, en cambio, el conocimiento se expresa mediante probabilidades y estados posibles.</p>
+
+          <h3>2. Mecánica ondulatoria</h3>
+          <p>Schrödinger tomó en serio la idea de que la materia podía comportarse como onda. Inspirado por los trabajos de Louis de Broglie, propuso una forma matemática para describir ese comportamiento. Esta formulación permitió explicar fenómenos atómicos de manera más clara para muchos físicos y se convirtió en una herramienta fundamental para la química, la física de materiales y la tecnología moderna.</p>
+
+          <h3>3. Puente entre física y biología</h3>
+          <p>En <em>¿Qué es la vida?</em> (1944), Schrödinger se preguntó cómo podía la materia viva conservar orden, herencia y estabilidad. Aunque la biología molecular avanzó después con nuevas evidencias, su libro ayudó a abrir un diálogo entre física y genética. Su gran valor educativo está en mostrar cómo una pregunta bien formulada puede atravesar disciplinas.</p>
+
+          <h3>4. Fundamentos de la realidad cuántica</h3>
+          <p>Schrödinger no aceptó pasivamente todas las interpretaciones de la física cuántica. Se incomodaba con ciertas consecuencias filosóficas de la teoría, especialmente con la idea de que la observación tuviera un papel tan problemático en la definición de los estados físicos. Por eso propuso el experimento del gato: para mostrar que algo extraño ocurría al trasladar ideas cuánticas al mundo visible.</p>
+        </div>
+        <aside class="equation-box">
+          <p class="small" style="color:#FFE2A8;text-transform:uppercase;font-weight:900;letter-spacing:.08em;text-align:center;margin:0">La ecuación en una mirada</p>
+          <div class="equation">iℏ ∂ψ/∂t = Ĥψ</div>
+          <p class="equation-caption">Forma general dependiente del tiempo. No hace falta memorizarla: lo importante es entender qué representa.</p>
+          <hr>
+          <div class="legend-item"><span class="dot"></span><span><b>ψ</b> representa la función de onda: la información posible del sistema.</span></div>
+          <div class="legend-item"><span class="dot"></span><span><b>Ĥ</b> representa la energía total del sistema, conocida como Hamiltoniano.</span></div>
+          <div class="legend-item"><span class="dot"></span><span><b>iℏ</b> muestra que el mundo cuántico exige una matemática distinta a la intuición cotidiana.</span></div>
+          <hr>
+          <p class="equation-caption">La ecuación no dice “dónde está exactamente” una partícula; permite calcular probabilidades de observación.</p>
+        </aside>
+      </div>
+
+      <table class="compare-table" aria-label="Comparación entre visión clásica y cuántica">
+        <thead><tr><th>Aspecto</th><th>Visión clásica</th><th>Visión cuántica asociada a Schrödinger</th></tr></thead>
+        <tbody>
+          <tr><td>Objeto</td><td>Partícula con posición definida.</td><td>Sistema descrito por una función de onda.</td></tr>
+          <tr><td>Predicción</td><td>Trayectoria determinada si se conocen las condiciones iniciales.</td><td>Probabilidades de resultados posibles.</td></tr>
+          <tr><td>Medición</td><td>Observar revela una propiedad ya definida.</td><td>Medir plantea preguntas sobre cómo se obtiene un resultado concreto.</td></tr>
+          <tr><td>Lenguaje</td><td>Órbitas, fuerzas, posiciones.</td><td>Estados, superposición, amplitudes y probabilidades.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="gato" class="section-card">
+      <span class="section-kicker"><i class="fa-solid fa-cat"></i> Paradoja central</span>
+      <h2>El gato de Schrödinger: más que una imagen famosa</h2>
+      <p class="lead">El experimento mental del gato fue propuesto en 1935 para mostrar una dificultad conceptual: si una partícula puede describirse como una superposición de estados, ¿qué ocurre cuando esa situación afecta a un objeto macroscópico, como un gato?</p>
+      <div class="cat-lab">
+        <div class="cat-step"><i class="fa-solid fa-box"></i><h3>Caja cerrada</h3><p>Un sistema está aislado del observador.</p></div>
+        <div class="cat-step"><i class="fa-solid fa-radiation"></i><h3>Evento cuántico</h3><p>Un átomo puede decaer o no decaer.</p></div>
+        <div class="cat-step"><i class="fa-solid fa-vial"></i><h3>Mecanismo</h3><p>El resultado microscópico activa o no el veneno.</p></div>
+        <div class="cat-step"><i class="fa-solid fa-question"></i><h3>Pregunta</h3><p>¿Antes de abrir la caja, qué significa decir que el gato tiene un estado?</p></div>
+      </div>
+      <div class="grid-2">
+        <div>
+          <h3>Lo que realmente quería mostrar</h3>
+          <p>Schrödinger no estaba diciendo que debamos encerrar gatos, ni que un gato real esté literalmente vivo y muerto de manera cotidiana. Estaba usando una situación extrema para evidenciar un problema: la mecánica cuántica funciona extraordinariamente bien para describir sistemas microscópicos, pero sus interpretaciones pueden volverse difíciles cuando se aplican sin cuidado al mundo macroscópico.</p>
+          <p>La paradoja se relaciona con el <strong>problema de la medición</strong>: cómo pasamos de un conjunto de posibilidades matemáticas a un resultado concreto observado. Por eso el gato se convirtió en un símbolo de la física moderna: muestra que la ciencia no solo calcula, también interroga el significado de sus propios conceptos.</p>
+        </div>
+        <div class="mini-note"><strong>Uso pedagógico:</strong> en una clase, el gato permite discutir qué es un modelo, qué es una metáfora científica y por qué una teoría puede ser correcta matemáticamente pero difícil de interpretar filosóficamente.</div>
+      </div>
+    </section>
+
+    <section id="pensamiento" class="section-card">
+      <span class="section-kicker"><i class="fa-solid fa-brain"></i> Pensamiento amplio</span>
+      <h2>Schrödinger como pensador: ciencia, filosofía y vida</h2>
+      <div class="concept-grid">
+        <div class="concept"><div class="icon"><i class="fa-solid fa-eye"></i></div><div><h3>Realidad y observación</h3><p>Le preocupaba que la teoría cuántica obligara a repensar qué significa observar, conocer y describir la realidad.</p></div></div>
+        <div class="concept"><div class="icon"><i class="fa-solid fa-dna"></i></div><div><h3>Biología y orden</h3><p>Se interesó por la estabilidad de la vida y por cómo la física podía dialogar con la herencia biológica.</p></div></div>
+        <div class="concept"><div class="icon"><i class="fa-solid fa-scroll"></i></div><div><h3>Filosofía</h3><p>Estudió tradiciones filosóficas occidentales y orientales, y conectó la ciencia con preguntas sobre la conciencia.</p></div></div>
+        <div class="concept"><div class="icon"><i class="fa-solid fa-person-walking-luggage"></i></div><div><h3>Exilio</h3><p>Su trayectoria muestra cómo la política puede afectar la producción científica y la vida de los investigadores.</p></div></div>
+      </div>
+      <div class="callout">
+        <p class="small">Lectura crítica</p>
+        <p>Presentar a Schrödinger en los colegios o en la universidad no consiste solo en enumerar descubrimientos. También implica preguntar cómo se forma una mente científica, cómo dialogan las disciplinas y cómo las crisis históricas modifican el destino del conocimiento.</p>
+      </div>
+    </section>
+
+    <section id="pedagogia" class="section-card">
+      <span class="section-kicker"><i class="fa-solid fa-university"></i> Enfoque UPN</span>
+      <h2>¿Por qué este tema encaja en la Universidad Pedagógica Nacional?</h2>
+      <p class="lead">Schrödinger es ideal para una institución formadora de educadores porque permite enseñar ciencia desde el pensamiento crítico: no solo como fórmula, sino como historia, problema, lenguaje, debate y construcción colectiva de sentido.</p>
+      <div class="grid-4">
+        <div class="info-card"><i class="fa-solid fa-chalkboard-user"></i><h3>Didáctica de la ciencia</h3><p>Permite traducir conceptos abstractos en metáforas, modelos, preguntas y actividades de aula.</p></div>
+        <div class="info-card"><i class="fa-solid fa-comments"></i><h3>Debate argumentado</h3><p>El gato abre discusiones sobre interpretación, evidencia, observación y límites del conocimiento.</p></div>
+        <div class="info-card"><i class="fa-solid fa-link"></i><h3>Interdisciplinariedad</h3><p>Une física, filosofía, biología, historia y ética, una ruta valiosa para la formación integral.</p></div>
+        <div class="info-card"><i class="fa-solid fa-lightbulb"></i><h3>Pensamiento crítico</h3><p>Invita a cuestionar respuestas simples y a entender la ciencia como proceso vivo.</p></div>
+      </div>
+      <h3>Preguntas guía para una exposición o clase</h3>
+      <details open><summary>¿Qué problema resolvió la ecuación de Schrödinger?</summary><div>Permitió describir matemáticamente el comportamiento de sistemas cuánticos mediante funciones de onda. En lugar de trayectorias exactas, ofrece probabilidades y estados posibles.</div></details>
+      <details><summary>¿Por qué el gato de Schrödinger sigue siendo importante?</summary><div>Porque ayuda a explicar el problema de la medición y la tensión entre el mundo microscópico descrito por la teoría cuántica y el mundo cotidiano que percibimos como definido.</div></details>
+      <details><summary>¿Qué enseña su vida sobre la ciencia?</summary><div>Que el conocimiento científico depende de contextos históricos, instituciones, debates, desplazamientos, comunidades académicas y decisiones éticas.</div></details>
+      <details><summary>¿Cómo conectarlo con la pedagogía?</summary><div>Usando su biografía como caso para enseñar ciencia no solo como resultado, sino como proceso: formular preguntas, construir modelos, debatir interpretaciones y comunicar ideas complejas con claridad.</div></details>
+    </section>
+
+    <section id="glosario" class="section-card">
+      <span class="section-kicker"><i class="fa-solid fa-list-check"></i> Glosario breve</span>
+      <h2>Conceptos clave para entenderlo mejor</h2>
+      <div class="grid-3">
+        <div class="info-card"><i class="fa-solid fa-wave-square"></i><h3>Función de onda</h3><p>Representación matemática del estado de un sistema cuántico. Permite calcular probabilidades.</p></div>
+        <div class="info-card"><i class="fa-solid fa-layer-group"></i><h3>Superposición</h3><p>Situación en la que un sistema se describe como combinación de varios estados posibles.</p></div>
+        <div class="info-card"><i class="fa-solid fa-magnifying-glass"></i><h3>Medición</h3><p>Proceso mediante el cual obtenemos un resultado físico concreto de un sistema.</p></div>
+        <div class="info-card"><i class="fa-solid fa-atom"></i><h3>Mecánica cuántica</h3><p>Teoría que describe el comportamiento de la materia y la energía a escala microscópica.</p></div>
+        <div class="info-card"><i class="fa-solid fa-shuffle"></i><h3>Entrelazamiento</h3><p>Relación cuántica en la que dos sistemas no pueden describirse completamente por separado.</p></div>
+        <div class="info-card"><i class="fa-solid fa-seedling"></i><h3>¿Qué es la vida?</h3><p>Libro de 1944 donde Schrödinger conecta la física con preguntas sobre herencia y organización biológica.</p></div>
+      </div>
+    </section>
+
+    <section id="fuentes" class="section-card">
+      <span class="section-kicker"><i class="fa-solid fa-book-open-reader"></i> Bibliografía consultada</span>
+      <h2>Fuentes recomendadas para sustentar el trabajo</h2>
+      <p class="lead">Estas fuentes permiten verificar la información histórica y científica de la página. Se recomienda citarlas en trabajos escritos o presentaciones académicas.</p>
+      <div class="source-list">
+        <a href="https://www.nobelprize.org/prizes/physics/1933/schrodinger/biographical/" target="_blank" rel="noopener">Nobel Prize · Erwin Schrödinger: biografía oficial</a>
+        <a href="https://www.nobelprize.org/prizes/physics/1933/schrodinger/facts/" target="_blank" rel="noopener">Nobel Prize · Datos del Premio Nobel de Física 1933</a>
+        <a href="https://www.britannica.com/biography/Erwin-Schrodinger" target="_blank" rel="noopener">Encyclopaedia Britannica · Erwin Schrödinger: vida, obra y aportes</a>
+        <a href="https://www.britannica.com/science/Schrodinger-equation" target="_blank" rel="noopener">Encyclopaedia Britannica · Ecuación de Schrödinger</a>
+        <a href="https://www.britannica.com/science/Schrodingers-cat" target="_blank" rel="noopener">Encyclopaedia Britannica · El gato de Schrödinger</a>
+      </div>
+    </section>
+
+    <div class="footer-cta">
+      <span class="section-kicker"><i class="fa-solid fa-pen-nib"></i> Cierre académico</span>
+      <h2>Legado para una universidad que forma educadores</h2>
+      <p class="lead" style="margin:auto">Schrödinger enseña que la ciencia no es solo una colección de respuestas: es una forma de preguntar mejor. Su vida permite comprender que enseñar física también es enseñar historia, pensamiento crítico, imaginación y responsabilidad intelectual.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p><strong>Universidad Pedagógica Nacional</strong> · Facultad de Ciencia y Tecnología</p>
+    <p>Proyecto educativo: Erwin Schrödinger, vida, ciencia y legado pedagógico</p>
+    <p>Diseño informativo y académico · Bogotá, 2026</p>
+  </footer>
+
+  <a class="btn-top" href="#inicio" aria-label="Volver al inicio"><i class="fa-solid fa-arrow-up"></i></a>
+
+  <script>
+    const progress = document.getElementById('progress');
+    const navLinks = [...document.querySelectorAll('.nav-links a')];
+    const sections = navLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+    function updateProgress(){
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      progress.style.width = (height ? (scrollTop / height) * 100 : 0) + '%';
+    }
+
+    function updateActiveLink(){
+      let current = sections[0]?.id;
+      sections.forEach(section => {
+        const top = section.getBoundingClientRect().top;
+        if(top <= 120) current = section.id;
+      });
+      navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + current));
+    }
+
+    document.addEventListener('scroll', () => {
+      updateProgress();
+      updateActiveLink();
+    }, {passive:true});
+    updateProgress();
+    updateActiveLink();
+  </script>
+</body>
+</html>
